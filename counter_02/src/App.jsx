@@ -10,7 +10,11 @@ function App() {
     console.log("clicked",counter);
   } 
   const decreaseValue=()=>{
-    setCounter(counter-1)
+    if(counter>0){
+      setCounter(counter-1)}
+    else{
+      setCounter(0)
+    }
     console.log("clicked",counter);
   }
     
