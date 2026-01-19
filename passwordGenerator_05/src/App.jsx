@@ -6,8 +6,6 @@ function App() {
   const [charAllowed,setCharAllowed]=useState(false)
   const [password,setPassword]=useState("")
 
-  //useReff hook
-  const passwordRef=useRef(null)
 
   const passwordGenerator = useCallback(()=>{
     let pass=""
@@ -22,6 +20,9 @@ function App() {
     setPassword(pass)
   },[length,numAllowed,charAllowed,setPassword])
   
+  //useReff hook
+  const passwordRef=useRef(null)
+  
   const copyPasswordToClip=useCallback(()=>{
     passwordRef.current?.select()
     window.navigator.clipboard.writeText(password)
@@ -34,7 +35,7 @@ function App() {
 
       <div className="w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-5 my-5 bg-gray-700 text-black">
         <h1 className='text-white text-center my-3'>Password Generator</h1>
-        <div className='className="flex shadow rounded-lg overflow-hidden mb-4 py-2"'>
+        <div className='"flex shadow rounded-lg overflow-hidden mb-4 py-2"'>
           <input type="text"
           value={password}
           className="outline-none w-full py-2 px-3 bg-white"
